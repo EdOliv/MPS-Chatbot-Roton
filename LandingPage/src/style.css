@@ -8,6 +8,21 @@ body {
     font-family: 'Orbitron', sans-serif;
 }
 
+/*
+nav {
+    width: 100vw;
+    height: 60px;
+    padding-right: 40px;
+    display: flex;
+    justify-content:flex-end;
+    align-items: center;
+}
+
+.gitLogoNavBar {
+    width: 50px;
+    height: 50px;  
+}
+*/
 
 .container {
     width: 100vw;
@@ -39,7 +54,7 @@ body {
 }
 
 .contentRight h1, p {
-    margin-bottom: 20px;
+    margin-bottom: 25px;
 }
 
 
@@ -50,11 +65,11 @@ body {
 .btn {
     font-family: 'Orbitron', sans-serif;
     font-weight: bold;
-    font-size: 18px;
+    font-size: 19px;
     cursor: pointer;
     background-color: rgb(208,63,50);
     color: #fff;
-    margin-bottom: 20px;
+    margin-bottom: 25px;
     width: 250px;
     height: 60px;
     border-radius: 5px;
@@ -84,8 +99,13 @@ body {
 }
 
 .fotoEquipe{
-    width: 100%;
+    width: 70px;
+    height: 70px;
+    max-width:100px;
+    max-height:100px;
+    object-fit: cover;
     border-radius: 50%;
+
 }
 
 
