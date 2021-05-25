@@ -1,7 +1,7 @@
 ## Chatbot de *Modelagem e Projeto de Sistemas*
 
 **As etapas da atividade são:**
-  - Fazer o cronograma/planejamento do projeto com os gráficos Gantt
+  - Fazer o cronograma/planejamento do projeto com os gráficos Gantt (https://lucid.app/lucidchart/invitations/accept/inv_eb7a5ef5-cb22-4a97-b240-435aefb8b577?viewport_loc=-158%2C-96%2C2220%2C1032%2C0_0)
   - Calcular o custo total do projeto e o custo por desenvolvedor
   - Gerenciar o andamento do projeto usando o GitHub Quadros
   - Desenvolver um chatbot simples em Python (ex. [Eliza](https://pt.wikipedia.org/wiki/ELIZA))
