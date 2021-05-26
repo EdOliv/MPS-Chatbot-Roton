@@ -148,15 +148,29 @@ nav {
         
     }
 
+    
+    .membro{
+        margin: 10px;
+        width: 200px;
+        margin-bottom: 40px;
+    }
+
+    .fotoEquipe {
+        width: 150px;
+        height: 150px;
+        max-width:250px;
+        max-height:250px;
+        object-fit: cover;
+        border-radius: 50%;
+    }
+
     .equipe{
         display: flex;
         flex-direction: column;
         flex-wrap: wrap;
+        
     }
 
-    .membro{
-        margin: 10px;
-    }
 
 
    
