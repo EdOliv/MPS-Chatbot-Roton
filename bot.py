@@ -13,6 +13,7 @@ def GenerateAnswer(question):
 # recebe a pergunta(str) e retorna uma lista de palavras-chave encontradas na pergunta
 def GetKeyWord(question):
   question = question.lower()
+  question.translate(question.maketrans("áéíóú", 'aeiou'))
   keyword = ''
   keylist = database.keys()
   for key in keylist:
