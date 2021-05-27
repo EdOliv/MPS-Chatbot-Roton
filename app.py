@@ -1,4 +1,5 @@
 from flask import Flask, render_template, request, jsonify
+import bot
 
 app = Flask(__name__)
 
@@ -14,4 +15,5 @@ def ask():
   # Aqui ocorre o processamento da pergunta
   request_data = request.get_json()
   question = request_data["question"]
-  return jsonify(answer="Olá!"), 200
+  answer = bot.GenerateAnswer(question)
+  return jsonify(answer), 200
