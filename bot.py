@@ -17,7 +17,7 @@ def GenerateAnswer(question):
 # recebe a pergunta(str) e retorna uma lista de palavras-chave encontradas na pergunta
 def GetKeyWord(question):
   question = question.lower()
-  question.translate(question.maketrans("áéíóú", 'aeiou'))
+  #question.translate(question.maketrans("áéíóú", 'aeiou'))
   keyword = ''
   keylist = database.keys()
   for key in keylist:
@@ -26,21 +26,22 @@ def GetKeyWord(question):
   return keyword
 
 
-register = {'cart':'', 'total': 0, 'pay': '', 'address': ''}
+order = ''
 
 def ConfirmOrder(keyword, question):
-  if keyword in menu.keys():
-    register['cart'] += f'{keyword} '
-    register['total'] += menu[keyword]
-  elif keyword in ['cartao', 'dinheiro']:
-    register['pay'] += question
+  global order
+  if keyword in ['oi|ola|olá', 'descartar']:
+    order = '  Carrinho: \t\n  Total: 0 reais\n'+\
+            '  Forma de pagamento: pay\n  Endereço de entrega: addr'''
+  elif keyword in menu.keys():
+    order = order.replace('\t', keyword+' \t')
+    total = int(re.search('[0-9]+', order).group())
+    total += menu[keyword]
+    order = re.sub('[0-9]+', str(total), order)
+  elif keyword in ['cartao|cartão', 'dinheiro']:
+    order = order.replace('pay', question)
   elif keyword == 'rua':
-    register['address'] += question
-    order = f"  Carrinho: {register['cart']}\n  Total: {register['total']} reais\n" +\
-			      f"  Forma de pagamento: {register['pay']}\n" +\
-			      f"  Endereço de entrega: {register['address']}"
-    register['cart'] = register['pay'] = register['address'] = ''
-    register['total'] = 0
+    order = order.replace('addr', question)
     return order
   return ''
 
