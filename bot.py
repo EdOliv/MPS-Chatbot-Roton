@@ -31,8 +31,8 @@ order = ''
 def confirm_order(keyword, question):
   global order
   if keyword in ['oi|ola|olá', 'descartar']:
-    order = '  Carrinho: \t\n  Total: 0 reais\n'+\
-            '  Forma de pagamento: pay\n  Endereço de entrega: addr'''
+    order = 'Carrinho: \t\nTotal: 0 reais\n'+\
+            'Forma de pagamento: pay\nEndereço de entrega: addr'''
   elif keyword in menu.keys():
     order = order.replace('\t', keyword+' \t')
     total = int(re.search('[0-9]+', order).group())
