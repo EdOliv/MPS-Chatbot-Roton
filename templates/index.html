@@ -40,7 +40,9 @@
         display: flex;
         flex-direction: column;
         overflow: auto;
+        scroll-behavior: auto;
       }
+
 
       .textChat {
         padding: 10px;
@@ -50,6 +52,8 @@
         list-style: none;
         height: auto;
       }
+
+
 
       .imgRoton {
         width: 100%;
@@ -94,7 +98,7 @@
         <img src="https://i.ibb.co/yRQPg1g/Logo.png" alt="Roton" />
       </div>
       <ul id="chat" class="chat">
-        <li class="textChat roton">Olá, Mestre Pokémon.<br/>O que deseja hoje?</li>
+        <li class="textChat roton">Olá, Mestre Pokémon.<br/>O que deseja pedir hoje?</li>
         <li class="textChat user">Converse com o Roton...</li>
       </ul>
 
@@ -102,12 +106,20 @@
         id="input"
         class="inputText"
         value=""
-        placeholder="Digite seu texto"
+        placeholder="Converse com o Roton..."
       />
       <button id="btn-send" class="btn">Enviar</button>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script>
+
+      function scroll() {
+        var objScrDiv = document.getElementById("chat");
+        objScrDiv.scrollTop = objScrDiv.scrollHeight;
+      }
+
+      
+
       window.onload = function () {
         console.log("Onload disparado");
         var chat = document.getElementById("chat");
@@ -120,6 +132,7 @@
           li.className = "textChat user";
           li.innerText = input.value;
           chat.appendChild(li);
+          
 
           axios
             .post("/ask", { question: input.value })
@@ -134,9 +147,14 @@
             .catch(function (err) {
               console.log(err);
             });
+
+          input.value = "";
+          scroll();
+
+          
         };
 
-        input.value = "";
+        
       };
     </script>
   </body>
