@@ -14,7 +14,6 @@ endOrder = ['Carrinho preenchido! Como você gostaria de efetuar o pagamento?',
 menu = {'x-salada': 6, 'suco': 3, 'pastel': 5,
         'refrigerante': 5, 'fritas': 4, 'pudim': 30}
 
-order = ''
 
 database = {'oi|ola|olá': choice(greeting),
             
