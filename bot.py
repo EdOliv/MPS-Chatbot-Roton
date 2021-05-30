@@ -2,9 +2,9 @@ import regex as re
 from database import database, menu
 
 
-def GenerateAnswer(question):
-  keyword = GetKeyWord(question)
-  order = ConfirmOrder(keyword, question)
+def generate_answer(question):
+  keyword = get_key_word(question)
+  order = confirm_order(keyword, question)
   try:
     answer = database[keyword]
     answer += order
@@ -15,7 +15,7 @@ def GenerateAnswer(question):
 
 
 # recebe a pergunta(str) e retorna uma lista de palavras-chave encontradas na pergunta
-def GetKeyWord(question):
+def get_key_word(question):
   question = question.lower()
   #question.translate(question.maketrans("áéíóú", 'aeiou'))
   keyword = ''
@@ -28,7 +28,7 @@ def GetKeyWord(question):
 
 order = ''
 
-def ConfirmOrder(keyword, question):
+def confirm_order(keyword, question):
   global order
   if keyword in ['oi|ola|olá', 'descartar']:
     order = '  Carrinho: \t\n  Total: 0 reais\n'+\
@@ -52,9 +52,8 @@ def main():
   question = ''
   while question != 'fim':
     question = input()
-    answer = GenerateAnswer(question)
+    answer = generate_answer(question)
     print(answer)
 
 if __name__ == "__main__":
   main()
-#debug

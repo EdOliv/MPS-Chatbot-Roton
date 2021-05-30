@@ -1,109 +1,151 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./style/style.css">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;900&display=swap" rel="stylesheet">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style/style.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;900&display=swap"
+      rel="stylesheet"
+    />
     <title>Roton</title>
 
     <style>
-        * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    }
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
 
-    body {
+      body {
         width: 100vw;
         height: 100vh;
         display: flex;
         justify-content: center;
         align-items: center;
-        font-family: 'Orbitron', sans-serif;
-    }
+        font-family: "Orbitron", sans-serif;
+      }
 
-    .chat {
-        border: 2px solid rgb(208,63,50);
+      .chat {
+        border: 2px solid rgb(208, 63, 50);
         border-radius: 5px;
         width: 500px;
         height: 500px;
         display: flex;
-        flex-direction:column;
-        overflow:auto;
-    }
+        flex-direction: column;
+        overflow: auto;
+      }
 
-    .textChat {
+      .textChat {
         padding: 10px;
         border-radius: 5px;
         margin: 10px 10px 10px 10px;
         text-decoration: none;
         list-style: none;
         height: auto;
-    }
+      }
 
-    .imgRoton {
+      .imgRoton {
         width: 100%;
-    }
+      }
 
-    .imgRoton img {
+      .imgRoton img {
         width: 90px;
-    }
+      }
 
-    .user {
-        
+      .user {
         text-align: right;
-    }
+      }
 
-    .roton {
+      .roton {
         background-color: rgba(208, 63, 50, 0.068);
-    }
+      }
 
-
-    .inputText {
+      .inputText {
         margin-top: 10px;
         width: 85%;
         height: 40px;
         border: 0;
-        border: 1px solid rgb(208,63,50);
-        padding-left:10px;
+        border: 1px solid rgb(208, 63, 50);
+        padding-left: 10px;
         padding-right: 10px;
-    }
+      }
 
-    .btn {
+      .btn {
         margin-top: 10px;
         width: 14%;
         height: 40px;
         border: 1px;
-        background-color: rgb(208,63,50);
+        background-color: rgb(208, 63, 50);
         color: #fff;
         cursor: pointer;
-    }
+      }
     </style>
-</head>
-<body>
-
+  </head>
+  <body>
     <div class="content">
-        <div class="imgRoton">
-            <img src="https://i.ibb.co/yRQPg1g/Logo.png" alt="Roton">
-        </div>
-        <ul class="chat">
-            <li class="textChat roton">Olá, User!</li>
-            <li class="textChat user">Olá, Roton</li>
-            <li class="textChat roton">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</li>
-            <li class="textChat user">All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words</li>
-            
-            
-        </ul>
+      <div class="imgRoton">
+        <img src="https://i.ibb.co/yRQPg1g/Logo.png" alt="Roton" />
+      </div>
+      <ul id="chat" class="chat">
+        <li class="textChat roton">Olá, User!</li>
+        <li class="textChat user">Olá, Roton</li>
+        <li class="textChat roton">
+          Lorem Ipsum is simply dummy text of the printing and typesetting
+          industry. Lorem Ipsum has been the industry's standard dummy text ever
+          since the 1500s
+        </li>
+        <li class="textChat user">
+          All the Lorem Ipsum generators on the Internet tend to repeat
+          predefined chunks as necessary, making this the first true generator
+          on the Internet. It uses a dictionary of over 200 Latin words
+        </li>
+      </ul>
 
-        <input class="inputText" value="" placeholder="Digite seu texto" />
-        <button class="btn">Enviar</button>
+      <input
+        id="input"
+        class="inputText"
+        value=""
+        placeholder="Digite seu texto"
+      />
+      <button id="btn-send" class="btn">Enviar</button>
     </div>
-    
-    
-    
-</body>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script>
+      window.onload = function () {
+        console.log("Onload disparado");
+        var chat = document.getElementById("chat");
+        var btnSend = document.getElementById("btn-send");
+        var input = document.getElementById("input");
+
+        btnSend.onclick = function () {
+          // Append user message
+          var li = document.createElement("li");
+          li.className = "textChat rotton";
+          li.innerText = res.data.answer;
+          chat.appendChild(li);
+
+          axios
+            .post("/ask", { question: input.value })
+            .then(function (res) {
+              console.log(res.data);
+              // Append rotton response
+              var li = document.createElement("li");
+              li.className = "textChat rotton";
+              li.innerText = res.data.answer;
+              chat.appendChild(li);
+            })
+            .catch(function (err) {
+              console.log(err);
+            });
+        };
+      };
+    </script>
+  </body>
 </html>
