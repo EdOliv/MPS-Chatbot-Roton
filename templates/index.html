@@ -127,8 +127,8 @@
         btnSend.onclick = function () {
           // Append user message
           var li = document.createElement("li");
-          li.className = "textChat rotton";
-          li.innerText = res.data.answer;
+          li.className = "textChat user";
+          li.innerText = input.value;
           chat.appendChild(li);
 
           axios
@@ -137,7 +137,7 @@
               console.log(res.data);
               // Append rotton response
               var li = document.createElement("li");
-              li.className = "textChat rotton";
+              li.className = "textChat roton";
               li.innerText = res.data.answer;
               chat.appendChild(li);
             })
