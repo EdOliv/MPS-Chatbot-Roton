@@ -143,6 +143,7 @@
               li.className = "textChat roton";
               li.innerText = res.data.answer;
               chat.appendChild(li);
+              scroll();
             })
             .catch(function (err) {
               console.log(err);
