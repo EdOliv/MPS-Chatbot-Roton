@@ -1,8 +1,8 @@
-## Projeto de chatbot simples em Python
+# Projeto de chatbot simples em Python
 
 ### Sobre o projeto
 Esse projeto de chatbot foi desenvolvido para a *Atividade 6* da disciplina de *Modelagem e Projeto de Sistemas (MPS)* da *Universidade do Estados do Amazonas (UEA)*.
-Roton foi o nome dado ao chatbot criado nesse projeto. Roton é um chatbot simples para atendimento de pedidos de comida. Programado em Python, ele tem como inspiração o primeiro software para simulação de diálogos, [Eliza](https://pt.wikipedia.org/wiki/ELIZA).
+Denominado carinhosamente de Roton, nosso chatbot é um simples chatbot para atendimento de pedidos de comida. Programado em Python, ele tem como inspiração o primeiro software para simulação de diálogos, [Eliza](https://pt.wikipedia.org/wiki/ELIZA).
 
 ### As etapas da atividade consistiram de:
   - Desenvolver um chatbot simples em Python
