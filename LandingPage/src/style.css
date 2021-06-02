@@ -265,8 +265,8 @@ nav button {
     }
 
     .fotoEquipe {
-        width: 250px;
-        height: 250px;
+        width: 150px;
+        height: 150px;
         max-width:250px;
         max-height:250px;
         object-fit: cover;
@@ -288,7 +288,7 @@ nav button {
 
     .card {
         margin: 0;
-        margin-top: 56px;
+        margin-top: 60px;
     }
 
     .cards { 
