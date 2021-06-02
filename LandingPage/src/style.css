@@ -230,6 +230,15 @@ nav button {
     color: rgb(208,63,50);
 }
 
+.fa-white {
+    color: #fff;
+}
+
+.secondContainer a {
+    padding-top: 100px;
+    margin-bottom: -60px;
+}
+
 
 @media(max-width: 700px){
     .container {
