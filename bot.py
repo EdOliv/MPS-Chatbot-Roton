@@ -30,7 +30,7 @@ order = ''
 
 def confirm_order(keyword, question):
   global order
-  if keyword in ['oi|ola|olá', 'descartar']:
+  if keyword in ['oi|ola|olá', 'descartar', 'tchau|adeus|encerrar|fim']:
     order = 'Carrinho: \t\nTotal: 0 reais\n'+\
             'Forma de pagamento: pay\nEndereço de entrega: addr'''
   elif keyword in menu.keys():
