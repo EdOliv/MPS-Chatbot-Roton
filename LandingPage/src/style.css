@@ -4,14 +4,32 @@
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     font-family: 'Orbitron', sans-serif;
 }
 
+nav {
+    padding-top: 5px;
+    height: 30px;
+    float: right;
+}
+
+nav strong {
+    margin-left: 30px;
+}
+
+nav button {
+    background-color: #fff;
+}
+
 
 .container {
-    width: 100vw;
-    height: 100vh;
+    width: 100%;
+    height: 85vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -24,6 +42,7 @@ body {
 }
 
 
+
 .contentLeft {
     width: 50vw;
     padding-left:50px;
@@ -31,7 +50,6 @@ body {
 }
 
 .contentLeft img {
-    
     width: 80%;
 }
 
@@ -42,8 +60,21 @@ body {
   
 }
 
+
+
 .contentRight h1, p {
     margin-bottom: 25px;
+    line-height: 25px;
+}
+
+.contentRight h1 {
+    line-height: 43px;
+    font-size: 36px;
+
+}
+
+.strongRed {
+    color: rgb(208,63,50);
 }
 
 
@@ -72,44 +103,130 @@ body {
     transform: scale(1.05);
 }
 
+
+
 .btnGithub{
-    background-color: black;
-    width: 80px;
+
+    border-radius: 5px;
+    background-color: rgba(0, 0, 0, 0.582);
+    width: 50px;
+    height: 50px;
     padding: 0;
     
 }
 
-.btnGithub img {
-    width: 100%;
-    height: 100%;
-}
+
 
 
 
 
 .equipe {
-    width: 100%;
+    width: 80%;
     height: auto;
-    margin-top: 40px;
+    margin-top: 90px;
     display: flex;
     justify-content: space-around;
     align-items: center;
+
 }
 
 .membro{
-    width: 90px;
-    margin-right: 10px;
     text-align: center;
 }
 
+.membro h4 {
+    font-size: 20px;
+    padding: 30px;
+}
+
 .fotoEquipe{
-    width: 70px;
-    height: 70px;
+    width: 100px;
+    height: 100px;
     max-width:100px;
     max-height:100px;
     object-fit: cover;
     border-radius: 50%;
 
+}
+
+.secondContainer {
+    width: 100%;
+    background-color: rgb(208,63,50);
+    height: 90vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.cards {
+    display: flex;
+    
+    justify-content:center;
+    align-items: center;
+    
+}
+
+.secondContainer h1 {
+    color: #fff;
+}
+
+.card {
+    text-align: center;
+    color: #fff;
+    margin: 50px;
+    width: 300px;
+    height: 170px;
+    border: 3px solid #fff;
+    border-radius: 5px;
+}
+
+.card h3 {
+    margin-top: 10px;
+}
+
+
+.card img {
+    width: 100%;
+    height: 100%;
+    max-width:100%;
+    max-height:100%;
+    object-fit: cover;
+    
+}
+
+.thirdContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
+    height: 90vh;
+    width: 100%;
+}
+
+.btnDown{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 10vh;
+    
+}
+
+.btnDown a{
+    transition: 4s;
+}
+
+.btnDown a:hover{
+    scroll-behavior: smooth;
+}
+
+.fa-angle-double-down {
+    color: rgb(208,63,50);
+}
+
+.fa-angle-double-up {
+    color: rgb(208,63,50);
 }
 
 
@@ -133,8 +250,11 @@ body {
         padding: 20px;
     }
     .contentLeft img{
-        width: 100%;
-        
+        width: 100%; 
+    }
+
+    .logo{
+        margin-top: 10px;
     }
 
     
@@ -145,8 +265,8 @@ body {
     }
 
     .fotoEquipe {
-        width: 150px;
-        height: 150px;
+        width: 250px;
+        height: 250px;
         max-width:250px;
         max-height:250px;
         object-fit: cover;
@@ -159,6 +279,30 @@ body {
         flex-wrap: wrap;
         
     }
+
+    .secondContainer{
+        width: 100%;
+        height: 1000px;
+
+    }
+
+    .card {
+        margin: 0;
+        margin-top: 56px;
+    }
+
+    .cards { 
+        display: flex;
+        flex-direction: column;
+    }
+
+    .thirdContainer {
+        width: 100%;
+        height: 1800px;
+    }
+
+    
+
 }
 
 @keyframes contentAnimation {
