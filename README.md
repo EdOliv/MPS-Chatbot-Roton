@@ -18,7 +18,6 @@ Denominado carinhosamente de Roton, nosso chatbot é um simples chatbot para ate
   - [Victor Yan](https://github.com/Victor7095)
   - [William David](https://github.com/WillDavid)
   - [Vinícius Soares](https://github.com/Vinicius-Soares)
-  - [Vinícius Edwards](https://github.com/EdwardsVinicius)
 
 ## Instruções para a execução do app flask:
 ### Criar o ambiente virtual
